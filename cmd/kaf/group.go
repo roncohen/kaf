@@ -173,7 +173,7 @@ func createGroupCommitOffsetCmd() *cobra.Command {
 			}
 			for _, detail := range groupDescs {
 				state := detail.State
-				if state != "Empty" {
+				if state == "Stable" {
 					errorExit("Consumer group %s has active consumers in it, cannot set offset\n", group)
 				}
 			}
